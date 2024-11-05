@@ -4,10 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 const SessionStats = ({ distance, elevation, duration }) => {
   return (
     <View style={styles.container}>
-      {/* Bloc principal gris avec les bords arrondis */}
       <View style={styles.statsContainer}>
-        
-        {/* Ligne avec Distance, Dénivelé et Durée */}
+
         <View style={styles.row}>
           <View style={styles.statBox}>
             <Text style={styles.statLabel}>Distance</Text>
@@ -22,7 +20,7 @@ const SessionStats = ({ distance, elevation, duration }) => {
             <Text style={styles.statValue}>{duration}</Text>
           </View>
         </View>
-        
+
       </View>
     </View>
   );
@@ -34,7 +32,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   statsContainer: {
-    backgroundColor: '#ededed', // Fond gris pour le bloc principal
+    backgroundColor: '#ededed',
     borderRadius: 25,
     padding: 5,
     width: '100%',
@@ -50,13 +48,13 @@ const styles = StyleSheet.create({
   },
   statLabel: {
     fontSize: 14,
-    color: '#000', // Couleur grise pour le label
+    color: '#000',
     marginBottom: 5,
   },
   statValue: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#000', // Couleur noire pour la valeur
+    color: '#000',
   },
 });
 

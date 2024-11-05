@@ -23,10 +23,9 @@ export default function TabLayout() {
         headerShown: false,
         tabBarActiveTintColor: '#000',
         tabBarInactiveTintColor: '#000',
-        tabBarShowLabel: false, // Masque tous les labels d'onglets
+        tabBarShowLabel: false,
       }}
     >
-      {/* Onglet Commentaires à gauche */}
       <Tabs.Screen
         name="comment"
         options={{
@@ -38,7 +37,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Onglet Montagne au centre */}
       <Tabs.Screen
         name="index"
         options={{
@@ -51,7 +49,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Onglet Partage à droite */}
       <Tabs.Screen
         name="share"
         options={{
@@ -78,7 +75,7 @@ const styles = StyleSheet.create({
   },
   centerIconContainer: {
     marginTop: 8,
-    width: 50, // Plus grand pour le centre
+    width: 50,
     height: 50,
     borderRadius: 25,
     backgroundColor: '#ededed',

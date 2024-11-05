@@ -1,4 +1,3 @@
-// components/AdditionalStats.js
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -49,7 +48,6 @@ const AdditionalStats = ({ avgHeartRate, elevation }) => {
         <Text style={styles.alpiText}>Séance prévue par ALPI</Text>
       </View>
 
-      {/* Rectangle blanc avec la barre horizontale et les barres verticales chevauchant légèrement */}
       <View style={styles.emptyBox}>
         <View style={styles.weekProgressBar} />
         <View style={styles.daysContainer}>
@@ -166,14 +164,14 @@ const styles = StyleSheet.create({
     height: 10,
     backgroundColor: '#ff0033',
     borderRadius: 5,
-    marginBottom: -5, // Positionne la barre légèrement au-dessus
+    marginBottom: -5,
   },
   daysContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     width: '90%',
     position: 'absolute',
-    bottom: 15, // Ajuste les barres verticales pour qu'elles commencent à la barre horizontale
+    bottom: 15,
   },
   dayBar: {
     width: 5,
