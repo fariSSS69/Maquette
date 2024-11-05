@@ -1,7 +1,9 @@
 // components/AdditionalStats.js
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
+
+const screenHeight = Dimensions.get('window').height;
 
 const AdditionalStats = ({ avgHeartRate, elevation }) => {
   return (
@@ -47,7 +49,17 @@ const AdditionalStats = ({ avgHeartRate, elevation }) => {
         <Text style={styles.alpiText}>Séance prévue par ALPI</Text>
       </View>
 
-      <View style={styles.emptyBox} />
+      {/* Rectangle blanc avec la barre horizontale et les barres verticales chevauchant légèrement */}
+      <View style={styles.emptyBox}>
+        <View style={styles.weekProgressBar} />
+        <View style={styles.daysContainer}>
+          <View style={styles.dayBar} />
+          <View style={styles.dayBar} />
+          <View style={styles.dayBar} />
+          <View style={styles.dayBar} />
+          <View style={styles.dayBar} />
+        </View>
+      </View>
     </View>
   );
 };
@@ -145,6 +157,30 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     flexGrow: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingBottom: 10,
+  },
+  weekProgressBar: {
+    width: '90%',
+    height: 10,
+    backgroundColor: '#ff0033',
+    borderRadius: 5,
+    marginBottom: -5, // Positionne la barre légèrement au-dessus
+  },
+  daysContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    width: '90%',
+    position: 'absolute',
+    bottom: 15, // Ajuste les barres verticales pour qu'elles commencent à la barre horizontale
+  },
+  dayBar: {
+    width: 5,
+    height: Math.min(screenHeight * 0.07, 50),
+    backgroundColor: '#ff0033',
+    borderRadius: 2,
+    marginHorizontal: 2,
   },
 });
 
